@@ -1148,8 +1148,8 @@ const projectsData = [
 
                     </div>
         `,
-        reportLink: "assets/docs/Concussion Detection Helmet Final Report.pdf",
-        projectLink: "https://sites.google.com/d/1s3id4KPpeEug2tKGhUHZ599dH19ybTr3/p/1Ota9ME-rngVZcl83DQrGWqbYMmL6BOGQ/edit",
+        reportLink: "https://sites.google.com/view/impactsense/final-concept",
+        projectLink: "https://sites.google.com/view/impactsense/final-concept",
         githubLink: "https://github.com/yourusername/concussion-detection-helmet"
     }
 ];
@@ -1177,6 +1177,14 @@ function openProjectModal(projectId) {
     document.getElementById('modal-technical').innerHTML = project.technical;
     document.getElementById('modal-results').innerHTML = project.results;
     document.getElementById('modal-report-link').href = project.reportLink;
+
+    // Change report button label for project 6
+    const reportBtn = document.getElementById('modal-report-link');
+    if (project.id === 6) {
+        reportBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> View Project';
+    } else {
+        reportBtn.innerHTML = '<i class="fas fa-file-pdf"></i> View Full Report';
+    }
 
     // Set GitHub link
     const githubButton = document.querySelector('#github-link');
